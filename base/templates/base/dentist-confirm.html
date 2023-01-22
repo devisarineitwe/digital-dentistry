@@ -1,0 +1,26 @@
+
+{% extends 'main.html' %}
+
+{% block content %}
+<main class="create-room layout">
+  <div class="container">
+    <div class="layout__box">
+        <div>
+            <span>{{error_message}}</span>
+        </div>
+        <div class="layout__body">
+            <form class="form" method="POST" action="">
+                <h3>Provide Dentist Secret Number For Dr. {{room_view.name}}</h3>
+                {% csrf_token %}
+                <div class="form__group" style="width:400px !important">
+                    <input type="text" name="secret_key" id="secret_key" placeholder="">
+                </div>
+                <div class="form__group" style="width:400px !important">
+                    <button class="btn btn--main" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</main>
+{% endblock%}
